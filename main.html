@@ -8,27 +8,27 @@
 
 <body>	
 	<script>
-		function secondHighest(arr,n) {
-			let first_largest = 0;
-  
-  for (let i = 0; i < n; i++) {
-    if (arr[i] > a[first_largest]) {
-      second_largest = first_largest;
-      first_largest = i;
-    } else if (arr[i] < arr[first_largest]) {
-      if (second_largest == -1 || arr[second_largest] < arr[i]) second_largest = i;
-    }
-  }
-
-  return a[second_largest];
+		function secondHighest(arr) {
+			first = arr[0];
+			second = arr[0];
+			for (var i = 0; i < arr.length; i++) {
+				if (first < arr[i]){
+					second = first;
+					first = arr[i];
+				}
+				else if (second < arr[i]){
+					second = arr[i];
+				}
+			}
+			console.log(second);
 		}
 			
 
 		function Main() {
-			var n = prompt("Enter the number of elements");
+			//var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
+			//	arr[i] = prompt("Enter element " + (i+1));
 			}
 			alert(secondHighest(arr));
 		}
